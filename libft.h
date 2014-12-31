@@ -6,7 +6,7 @@
 /*   By: gbadi <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/10 15:40:23 by gbadi             #+#    #+#             */
-/*   Updated: 2014/12/31 17:46:11 by gbadi            ###   ########.fr       */
+/*   Updated: 2014/12/31 18:09:13 by gbadi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,18 @@
 # define COLOR_CYAN    "\x1b[36m"
 # define COLOR_RESET   "\x1b[0m"
 
-#define FT_ASSERT(x) ft_assert(x, #x)
+# define FT_ASSERT(x) ft_assert(x, #x)
 
-#define _LINE_ ft_strjoin("line: ", ft_itoa(__LINE__))
-#define _FUNCTION_ ft_strjoin("function: ", __FUNCTION__)
-#define __LOCATION__ ft_strjoin(ft_strjoin(_FUNCTION_, ", "), _LINE_)
+# define _LINE_ ft_strjoin("line: ", ft_itoa(__LINE__))
+# define _FUNCTION_ ft_strjoin("function: ", __FUNCTION__)
+# define __LOCATION__ ft_strjoin(ft_strjoin(_FUNCTION_, ", "), _LINE_)
 
-#define LOG(x) ft_putline("log.txt", ft_strjoin(__LOCATION__, ft_strjoin(" ----- ", x)))
+# define LOG(x) ft_putline("log.txt", ft_strjoin(__LOCATION__, ft_strjoin(" ----- ", x)))
 
 # include <string.h>
 # include "list.h"
+
+# define FT_HAS(line, c) (ft_strchr(line, c) != NULL)
 
 int				ft_atoi(const char *str);
 int				ft_isalpha(int c);
